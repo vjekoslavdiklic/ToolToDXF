@@ -9,7 +9,7 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 
 # ------------------------------
-# Helper functions
+# myHelper functions
 # ------------------------------
 def order_points(pts):
     rect = np.zeros((4, 2), dtype="float32")
