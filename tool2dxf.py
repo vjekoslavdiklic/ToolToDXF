@@ -210,10 +210,10 @@ def refine_contour_gui(img, contour_cnt):
     cv2.namedWindow(EDITOR_WINDOW, cv2.WINDOW_NORMAL)
     cv2.setMouseCallback(EDITOR_WINDOW, on_mouse)
 
-    while True:
+    while False:
         key = cv2.waitKey(50) & 0xFF
         redraw()
-        if key == 13:   # Enter
+        if  key == 13:   # Enter
             break
         elif key == ord('u'):
             if current_polyline:
@@ -320,14 +320,14 @@ def detect_paper(image_path, paper_size='A4', offset_mm=1.0, output_name=None):
 
     if paper_contour is not None:
         x, y, w, h = cv2.boundingRect(paper_contour)
-        if w >= img.shape[1] * 0.95 and h >= img.shape[0] * 0.95:
+        if False:#w >= img.shape[1] * 0.95 and h >= img.shape[0] * 0.95:
             paper_contour = None
             print("⚠️ Detected contour is nearly the entire image; ignoring.")
         else:
             rect = cv2.minAreaRect(paper_contour)
             width, height = rect[1]
             aspect_ratio = max(width, height) / min(width, height)
-            if not (expected_aspect - 0.1 < aspect_ratio < expected_aspect + 0.1):
+            if False: #not (expected_aspect - 0.1 < aspect_ratio < expected_aspect + 0.1):
                 print("⚠️ Found rectangle, but aspect ratio doesn't match the specified paper size.")
                 paper_contour = None
 

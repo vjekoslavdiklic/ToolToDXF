@@ -23,3 +23,4 @@ build/
 dist/
 
 output/
+/.idea
